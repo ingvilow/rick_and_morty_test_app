@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty_test_app/bloc_list/bloc_characters_list.dart';
 import 'package:rick_and_morty_test_app/bloc_list/bloc_list_event.dart';
 import 'package:rick_and_morty_test_app/bloc_list/bloc_list_state.dart';
+import 'package:rick_and_morty_test_app/pages/character_by_id_page.dart';
 import 'package:rick_and_morty_test_app/pages/error_screen.dart';
 import 'package:rick_and_morty_test_app/pages/grid_characters_list.dart';
 import 'package:rick_and_morty_test_app/repository/api_service.dart';
@@ -15,7 +16,6 @@ class CharactersListPage extends StatefulWidget {
 }
 
 class _CharactersListPageState extends State<CharactersListPage> {
-  final characterListBloc = CharacterListBloc(ApiService());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,8 +46,19 @@ class _CharactersListPageState extends State<CharactersListPage> {
                   ),
                   itemCount: state.charactersList.results.length,
                   itemBuilder: (context, index) {
-                    return GridCharacterList(
-                      imageResult: state.charactersList.results[index],
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => CharacterByidPage(
+                              id: state.charactersList.results[index].id ?? 0,
+                            ),
+                          ),
+                        );
+                      },
+                      child: GridCharacterList(
+                        imageResult: state.charactersList.results[index],
+                      ),
                     );
                   },
                 ),
