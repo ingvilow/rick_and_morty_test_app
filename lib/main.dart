@@ -26,4 +26,3 @@ class HomePage extends StatelessWidget {
     return const Placeholder();
   }
 }
-
