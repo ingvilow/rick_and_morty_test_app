@@ -2,15 +2,12 @@
 
 A new Flutter project.
 
-## Getting Started
+## Что можно было бы добавить еще помимо основной задачи, если бы было чуть побольше времени
 
-This project is a starting point for a Flutter application.
+1. Кэширование запроса на случай, если отвалится интернет (реализовать можно либо через shared_pref, либо dio_cache_http (но у него с json_serialized какие-то проблемы совместимости), либо, в крайнем случае, писать в обычный файлик. 
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Видео пример работы приложения
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://user-images.githubusercontent.com/73110438/232057260-2b154e44-e320-45e7-8c61-3d8522665198.mp4
+
